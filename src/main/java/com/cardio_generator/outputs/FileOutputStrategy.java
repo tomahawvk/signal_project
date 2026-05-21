@@ -8,6 +8,12 @@ import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
 // Google Java Style: Class names use UpperCamelCase and must match the file name.
+/**
+ * Writes generated patient data to files grouped by measurement label.
+ *
+ * <p>Each label is mapped to a text file under the configured base directory.
+ * New output is appended so repeated simulator runs can preserve earlier data.
+ */
 public class FileOutputStrategy implements OutputStrategy {
 
     private String baseDirectory;
@@ -15,10 +21,23 @@ public class FileOutputStrategy implements OutputStrategy {
     // Google Java Style: Variable and field names use lowerCamelCase, not underscores.
     public final ConcurrentHashMap<String, String> fileMap = new ConcurrentHashMap<>();
 
+    /**
+     * Creates a file output strategy for the specified base directory.
+     *
+     * @param baseDirectory the directory where label-specific output files are stored
+     */
     public FileOutputStrategy(String baseDirectory) {
         this.baseDirectory = baseDirectory;
     }
 
+    /**
+     * Appends one generated data event to the file associated with its label.
+     *
+     * @param patientId the identifier of the patient associated with the data
+     * @param timestamp the event time in milliseconds since the Unix epoch
+     * @param label the measurement or event type used to select the output file
+     * @param data the generated value or status text to write
+     */
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
         try {
