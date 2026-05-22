@@ -35,7 +35,7 @@ public class Patient {
      * @param timestamp        the time at which the measurement was taken, in
      *                         milliseconds since UNIX epoch
      */
-    public void addRecord(double measurementValue, String recordType, long timestamp) {
+    public synchronized void addRecord(double measurementValue, String recordType, long timestamp) {
         PatientRecord record = new PatientRecord(this.patientId, measurementValue, recordType, timestamp);
         this.patientRecords.add(record);
     }
@@ -51,7 +51,7 @@ public class Patient {
      * @return a list of PatientRecord objects that fall within the specified time
      *         range
      */
-    public List<PatientRecord> getRecords(long startTime, long endTime) {
+    public synchronized List<PatientRecord> getRecords(long startTime, long endTime) {
         List<PatientRecord> recordsInRange = new ArrayList<>();
 
         for (PatientRecord record : patientRecords) {
