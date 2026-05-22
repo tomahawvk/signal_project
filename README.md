@@ -76,3 +76,7 @@ The Part 3 implementation adds `FileDataReader` for reading simulator file outpu
 ## Project Part 4
 Part 4 applies Factory Method, Strategy, Decorator, and Singleton patterns to the patient alert system.
 Documentation and test verification are available in [docs/part4](docs/part4).
+
+## Project Part 5
+Part 5 adds WebSocket-based real-time data intake. The new `PatientWebSocketClient` receives streamed simulator messages, parses them with `DataMessageParser`, and stores the results in `DataStorage`.
+Documentation and test verification are available in [docs/part5](docs/part5).
