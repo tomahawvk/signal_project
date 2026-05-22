@@ -62,4 +62,13 @@ public class Patient {
 
         return recordsInRange;
     }
+
+    /**
+     * Returns the unique identifier for this patient.
+     *
+     * @return the patient ID
+     */
+    public int getPatientId() {
+        return patientId;
+    }
 }

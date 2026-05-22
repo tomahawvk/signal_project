@@ -69,3 +69,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## UML Models
 Part 2 UML class diagrams and explanations are available in [uml_models](uml_models/README.md).
+
+## Part 3 Implementation Update
+The Part 3 implementation adds `FileDataReader` for reading simulator file output into `DataStorage`, extends `AlertGenerator` with concrete alert checks, and adds `Main` to choose between simulator and storage execution.
