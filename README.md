@@ -72,3 +72,7 @@ Part 2 UML class diagrams and explanations are available in [uml_models](uml_mod
 
 ## Part 3 Implementation Update
 The Part 3 implementation adds `FileDataReader` for reading simulator file output into `DataStorage`, extends `AlertGenerator` with concrete alert checks, and adds `Main` to choose between simulator and storage execution.
+
+## Project Part 4
+Part 4 applies Factory Method, Strategy, Decorator, and Singleton patterns to the patient alert system.
+Documentation and test verification are available in [docs/part4](docs/part4).
