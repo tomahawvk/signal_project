@@ -38,6 +38,16 @@ public class HealthDataSimulator {
     private static ScheduledExecutorService scheduler;
     private static OutputStrategy outputStrategy = new ConsoleOutputStrategy(); // Default output strategy
     private static final Random random = new Random();
+    private static final HealthDataSimulator INSTANCE = new HealthDataSimulator();
+
+    /**
+     * Returns the shared HealthDataSimulator instance.
+     *
+     * @return the singleton HealthDataSimulator instance
+     */
+    public static HealthDataSimulator getInstance() {
+        return INSTANCE;
+    }
 
     /**
      * Parses command-line options, initializes patient identifiers, and schedules
