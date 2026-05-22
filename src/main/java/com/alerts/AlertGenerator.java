@@ -3,6 +3,7 @@ package com.alerts;
 import com.data_management.DataStorage;
 import com.data_management.Patient;
 import com.data_management.PatientRecord;
+import com.alerts.BasicAlert;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -179,7 +180,7 @@ public class AlertGenerator {
     }
 
     private void triggerAlert(Patient patient, String condition, long timestamp) {
-        Alert alert = new Alert(String.valueOf(patient.getPatientId()), condition, timestamp);
+        Alert alert = new BasicAlert(String.valueOf(patient.getPatientId()), condition, timestamp);
         triggerAlert(alert);
     }
 

@@ -1,26 +1,16 @@
 package com.alerts;
 
-// Represents an alert
-public class Alert {
-    private final String patientId;
-    private final String condition;
-    private final long timestamp;
+/**
+ * Defines the common behavior of all alerts in the monitoring system.
+ */
+public interface Alert {
+    String getPatientId();
 
-    public Alert(String patientId, String condition, long timestamp) {
-        this.patientId = patientId;
-        this.condition = condition;
-        this.timestamp = timestamp;
-    }
+    String getCondition();
 
-    public String getPatientId() {
-        return patientId;
-    }
+    long getTimestamp();
 
-    public String getCondition() {
-        return condition;
-    }
+    String getPriority();
 
-    public long getTimestamp() {
-        return timestamp;
-    }
+    boolean shouldRepeat();
 }
